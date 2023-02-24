@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading;
-using System;
 using System.Threading.Tasks;
 namespace CoolBoi{
 public class InputExample : MonoBehaviour

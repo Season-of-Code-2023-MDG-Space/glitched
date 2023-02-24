@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System.Threading;
-using System;
 using System.Threading.Tasks;
 
 namespace CoolBoi{
@@ -11,7 +9,7 @@ public class MasterScript : MonoBehaviour
 {
     public static GameObject g; //for storing 'DisplayText' Game object. kept static as it will remain unique throughout playtime.
     public static Text tx; //for containing text part. static for same reason.
-    public static GameObject g2;
+    public static GameObject g2; //for storing 'Inputter' Game object.
     Room obj;
     void Start()
     {
