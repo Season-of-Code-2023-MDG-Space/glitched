@@ -2,23 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
+using System.Threading.Tasks;
 
+namespace CoolBoi{
 public class Room1 : Room
 {
-    public override Room enterRoom()
+    public override async Task<Room> enterRoom()
     {
         Debug.Log("Welcome to Room1");
-        MasterScript.tx.text="Welcome to Room1";
-        Repeater:
+        MasterScript.tx.text="Welcome to Room1\nSelect \nA- Room2\nB- Room1";
         Debug.Log("Waiting for input");
-        Thread.Sleep(20);
-        if(MasterScript.input!="A"||MasterScript.input!="B")
-        goto Repeater;
-        string c=MasterScript.input;
-        MasterScript.input="";
+        string c = await InputExample.WaitForInput();
         if(c=="A")
         return new Room2();
         else
         return new Room1();
     }
+}
 }
