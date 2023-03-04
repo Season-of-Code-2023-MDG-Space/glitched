@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Threading.Tasks;
+using TMPro;
 namespace CoolBoi{
 public class InputExample : MonoBehaviour
 {
-    public static InputField inputField;
+    public static TMP_InputField inputField;
 
     public static async Task<string> WaitForInput()
     {
