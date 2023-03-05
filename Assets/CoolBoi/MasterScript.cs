@@ -8,41 +8,28 @@ using TMPro;
 namespace CoolBoi{
 public class MasterScript : MonoBehaviour
 {
-    public static GameObject g; //for storing 'DisplayText' Game object. kept static as it will remain unique throughout playtime.
-    public static TextMeshProUGUI tx; //for containing text part. static for same reason.
-    public static GameObject g2; //for storing 'Inputter' Game object.
-    Room obj;
+    public static Room current_room;
     void Start()
     {
-        g=GameObject.Find("Canvas/DisplayText");
-        tx = g.GetComponent<TextMeshProUGUI>();
-        obj = new Room1();
-        g2=GameObject.Find("Canvas/Inputter");
-        InputExample.inputField = g2.GetComponent<TMP_InputField>();
-        Starter();
+        current_room=GetComponent<Room1>();
+        begin();
     }
-    async void Starter()
+    async void begin()
     {
-        while(obj!=null)
-        obj=await obj.enterRoom();
-        tx.text="Game Over";
-        Debug.Log("Stopped");
-    }
-    public void textEffectCall(string s)
-    {
-        StartCoroutine(textEffect(s));
-    }
-        public IEnumerator textEffect(string s)
-    {
-        string x="";
-        var rtn=new WaitForSeconds(0.15f);
-        for (int i=0; i<s.Length; i++)
+        lol:
+        string x = await current_room.enterRoom();
+        switch(x)
         {
-            x=x+s[i];
-            tx.text=x;
-            yield return rtn;
+            case "Room1":
+            current_room=GetComponent<Room1>();
+            break;
+            case "Room2":
+            current_room=GetComponent<Room2>();
+            break;
+            default:
+            return;
         }
-        yield break;
+        goto lol;
     }
 }
 }   

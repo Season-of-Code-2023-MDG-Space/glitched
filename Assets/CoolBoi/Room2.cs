@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 namespace CoolBoi{
 public class Room2 : Room
 {
-    override public async Task<Room> enterRoom()
+    override public async Task<string> enterRoom()
     {
-        Debug.Log("Welcome to Room2");
-        printxt("Welcome to Room2\nSelect\nA- Exit\nB- Room1");
-        Debug.Log("Waiting for input");
-        string c = await InputExample.WaitForInput();
+        uim.hideInputter();
+        var x = StartCoroutine(uim.textEffect("Welcome to Room2\n", "A- Exit\n", "B- Room1"));
+        uim.showInputter();
+        string c = await uim.WaitForInput();
+        uim.emptyText();
+        uim.flushInput();
+        StopCoroutine(x);
         if(c=="A")
         return null;
         else
-        return new Room1();
+        return "Room1";
     }
 }
 }
