@@ -8,6 +8,7 @@ public class Room1 : Room
 {
     public override async Task<string> enterRoom()
     {
+        FindObjectOfType<AudioManager>().Play("MeditationMusic");
         uim.hideInputter();
         var x = StartCoroutine(uim.textEffect("Welcome to Room1\n", "A - Room 2\n", "B - Room1\n"));
         uim.showInputter();
