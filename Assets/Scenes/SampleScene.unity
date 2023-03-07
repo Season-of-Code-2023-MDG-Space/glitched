@@ -972,10 +972,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Glitch
     clip: {fileID: 8300000, guid: 5ccc036acbce09b4fba760a68a3a0914, type: 3}
-    volume: 0
-    volumeVariance: 0
-    pitch: 0
-    pitchVariance: 0
+    volume: 0.3
+    volumeVariance: 0.3
+    pitch: 1
+    pitchVariance: 1
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
@@ -1008,6 +1008,8 @@ GameObject:
   - component: {fileID: 1997629974}
   - component: {fileID: 1997629976}
   - component: {fileID: 1997629975}
+  - component: {fileID: 1997629978}
+  - component: {fileID: 1997629977}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -1090,6 +1092,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a0e54724b2c49a42bfee9f2af9959f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1997629977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997629969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ad00069a658454691685815e042d84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1997629978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997629969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abc173fba9392774e85adf5c0bbc0674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2147137545

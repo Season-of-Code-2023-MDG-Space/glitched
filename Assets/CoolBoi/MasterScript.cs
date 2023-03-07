@@ -26,6 +26,12 @@ public class MasterScript : MonoBehaviour
             case "Room2":
             current_room=GetComponent<Room2>();
             break;
+            case "Room3":
+            current_room=GetComponent<Room3>();
+            break;
+            case "Room4":
+            current_room=GetComponent<Room4>();
+            break;
             default:
             return;
         }
