@@ -6,28 +6,21 @@ using System.Threading.Tasks;
 namespace CoolBoi{
 public class Room3 : Room
 {
+    string[] words1 = {"Type anything when you are done thinking about the answer\n", "What is the meaning of life?\n"};
+    string[] words2 = {"Do you believe in entities?"};
+    string[] words3= {"Do yoU BELIEVE IN ENTITIES?"};
     public override async Task<string> enterRoom()
     {
-        uim.hideInputter();
-        var x = StartCoroutine(uim.textEffect("Type anything when you are done thinking about the answer\n", "What is the meaning of life?\n"));
-        uim.showInputter();
-        string c = await uim.WaitForInput();
-        StopCoroutine(x);
-        uim.flushInput();
-        x = StartCoroutine(uim.textEffect("Do you believe in entities?"));
-        uim.showInputter();
-        c = await uim.WaitForInput();
-        StopCoroutine(x);
-        uim.flushInput();
-        FindObjectOfType<AudioManager>().Stop("MeditationMusic");
-        FindObjectOfType<AudioManager>().Play("Glitch");
-        x = StartCoroutine(uim.textEffect("Do yoU BELIEVE IN ENTITIES?"));
-        uim.showInputter();
-        c = await uim.WaitForInput();
-        StopCoroutine(x);
-        uim.emptyText();
-        uim.flushInput();
-        return "Room1";
+        userInput = await displayAndWait(words1);
+        ci();
+        userInput = await displayAndWait(words2);
+        ci();
+        stopSound(MeditationMusic);
+        playSound(Glitch);
+        userInput = await displayAndWait(words3);
+        stopSound(Glitch);
+        cs();
+        return Room1;
     }
 }
 }

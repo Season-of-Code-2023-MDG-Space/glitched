@@ -6,17 +6,13 @@ using System.Threading.Tasks;
 namespace CoolBoi{
 public class Room4 : Room
 {
+    string[] words = {"Ending 1 of ??\n", "No :|"};
     public override async Task<string> enterRoom()
     {
-        FindObjectOfType<AudioManager>().Play("MeditationMusic");
-        uim.hideInputter();
-        var x = StartCoroutine(uim.textEffect("Ending 1 of ??\n", "No :|"));
-        uim.showInputter();
-        string c = await uim.WaitForInput();
-        StopCoroutine(x);
-        uim.emptyText();
-        uim.flushInput();
-        return "Room1";
+        playSound(MeditationMusic);
+        userInput = await displayAndWait(words);
+        cs();
+        return Room1;
     }
 }
 }

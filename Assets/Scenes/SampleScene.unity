@@ -976,7 +976,7 @@ MonoBehaviour:
     volumeVariance: 0.3
     pitch: 1
     pitchVariance: 1
-    loop: 0
+    loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
 --- !u!4 &1644017485
