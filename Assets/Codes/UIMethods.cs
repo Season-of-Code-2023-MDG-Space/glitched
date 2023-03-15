@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Threading.Tasks;
 
-namespace CoolBoi{
+namespace Codes{
 public class UIMethods : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -63,7 +63,7 @@ public class UIMethods : MonoBehaviour
             }
             yield return rtn2;
         }
-        yield break;
+        yield break; 
     }
     public void showInputter()
     {

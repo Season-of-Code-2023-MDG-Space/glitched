@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using System.Threading;
 using TMPro;
 
-namespace CoolBoi{
+namespace Codes{
 public class Room : MonoBehaviour
 {
     protected string userInput;
@@ -18,6 +18,7 @@ public class Room : MonoBehaviour
     protected string Room2 = "Room2";
     protected string Room3 = "Room3";
     protected string Room4 = "Room4";
+    protected string RickRoll = "RickRoll";
     void Start()
     {
         GameObject g = GameObject.Find("GameController");
@@ -34,12 +35,18 @@ public class Room : MonoBehaviour
     }
     public void stopSound(string s)
     {
-        FindObjectOfType<AudioManager>().Play(s);
+        FindObjectOfType<AudioManager>().Stop(s);
+    }
+    public void pauseSound(string s)
+    {
+        FindObjectOfType<AudioManager>().Pause(s);
     }
     public async Task<string> displayAndWait(params string[] words)
     {
+        string x= uim.txt.text + addText(words);
         current_cr = StartCoroutine(uim.textEffect(words));
         string c = await uim.WaitForInput();
+        uim.txt.text = x;
         StopCoroutine(current_cr);
         return c;
     }
@@ -51,6 +58,14 @@ public class Room : MonoBehaviour
     public void ci() //clear input
     {
         uim.flushInput();
+    }
+    public string addText(params string[] s)
+    {
+        string temp="";
+        foreach (string str in s) {
+        temp += str;
+        }
+        return temp;
     }
 }
 }
