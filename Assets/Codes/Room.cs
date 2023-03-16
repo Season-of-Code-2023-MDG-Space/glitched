@@ -47,7 +47,10 @@ public class Room : MonoBehaviour
         current_cr = StartCoroutine(uim.textEffect(words));
         string c = await uim.WaitForInput();
         uim.txt.text = x;
+        try{
         StopCoroutine(current_cr);
+        }
+        finally{}
         return c;
     }
     public void cs() //clear screen (clears input too)

@@ -12,6 +12,7 @@ public class Room4 : Room
         playSound(RickRoll);
         userInput = await displayAndWait(words);
         cs();
+        stopSound(RickRoll);
         return Room1;
     }
 }
