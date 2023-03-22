@@ -4,28 +4,50 @@ using UnityEngine;
 public class MasterScript : MonoBehaviour
 {
     public _Folder current_dir;
+    public GameObject filePrefab;
+    public GameObject folderPrefab;
+    static List<GameObject> displayedIcons;
     void Start()
     {
-        
+        displayedIcons = new List<GameObject>();
+        displayCurrentDirectory();
+    }
+    void displayCurrentDirectory()
+    {
+        int j=0;
+        foreach (Icon i in current_dir.contentWithin)
+        {
+            GameObject temp;
+            if(i is _Folder)
+            {
+                temp = Instantiate(folderPrefab);
+            }
+            else
+            {
+                temp = Instantiate(filePrefab);
+            }
+            displayedIcons.Add(temp);
+            temp.transform.position = new Vector2(-10+j*2, 3.5f);
+            _PrefabData pd = temp.GetComponent<_PrefabData>();
+            pd.iconToRepresent = i;
+            j++;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    /*void CallBack(_Folder a, int x)
+    public void folderClicked(_Folder f)
     {
-        foreach (Icon i in a.contentWithin)
+        Debug.Log("Hooraay");
+        Debug.Log(f.title);
+        foreach(GameObject i in displayedIcons)
         {
-            string s="";
-            for (int j = 0; j<x; j++)
-            s+=" ";
-            s+=i.title;
-            Debug.Log(s);
-            if (i is _Folder)
-            CallBack((_Folder)i, x+1);
+            Destroy(i);
         }
+        current_dir=f;
+        displayCurrentDirectory();
     }
-    */
 }
