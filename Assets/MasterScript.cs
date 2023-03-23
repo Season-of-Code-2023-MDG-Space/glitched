@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 public class MasterScript : MonoBehaviour
 {
     public _Folder current_dir;
     public GameObject filePrefab;
     public GameObject folderPrefab;
+    public GameObject titlePrefab;
     static List<GameObject> displayedIcons;
     void Start()
     {
@@ -14,10 +17,20 @@ public class MasterScript : MonoBehaviour
     }
     void displayCurrentDirectory()
     {
-        int j=0;
+        GameObject temp;
+        temp=Instantiate(folderPrefab);
+        displayedIcons.Add(temp);
+        temp.transform.position = new Vector2(-10, 3.5f);
+        _PrefabData pd = temp.GetComponent<_PrefabData>();
+        temp = Instantiate(titlePrefab);
+        TextMeshProUGUI tmp = temp.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+        tmp.text="..";
+        temp.transform.position = new Vector2(-10, 2);
+        displayedIcons.Add(temp);
+        pd.iconToRepresent = current_dir.parent;
+        int j=1;
         foreach (Icon i in current_dir.contentWithin)
         {
-            GameObject temp;
             if(i is _Folder)
             {
                 temp = Instantiate(folderPrefab);
@@ -27,8 +40,13 @@ public class MasterScript : MonoBehaviour
                 temp = Instantiate(filePrefab);
             }
             displayedIcons.Add(temp);
-            temp.transform.position = new Vector2(-10+j*2, 3.5f);
-            _PrefabData pd = temp.GetComponent<_PrefabData>();
+            temp.transform.position = new Vector2(-10+j*3f, 3.5f);
+            pd = temp.GetComponent<_PrefabData>();
+            temp = Instantiate(titlePrefab);
+            tmp = temp.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
+            tmp.text = i.title;
+            temp.transform.position = new Vector2(-10+j*3f, 2);
+            displayedIcons.Add(temp);
             pd.iconToRepresent = i;
             j++;
         }

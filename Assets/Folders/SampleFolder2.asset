@@ -15,3 +15,4 @@ MonoBehaviour:
   title: Folder2
   contentWithin:
   - {fileID: 11400000, guid: 63d7a8a6c85f141428e0b5a242f40317, type: 2}
+  parent: {fileID: 11400000, guid: b00735feec8e2d241b404f9a806c6d35, type: 2}

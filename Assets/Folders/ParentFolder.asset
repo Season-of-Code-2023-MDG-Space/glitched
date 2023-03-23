@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b83661699f9ab46b2066b7c779d982, type: 3}
   m_Name: ParentFolder
   m_EditorClassIdentifier: 
-  title: Glitched
+  title: ParentFolder
   contentWithin:
   - {fileID: 11400000, guid: b00735feec8e2d241b404f9a806c6d35, type: 2}
   - {fileID: 11400000, guid: 016a578dfeb440e4f93ff14307a094c0, type: 2}
+  parent: {fileID: 11400000}

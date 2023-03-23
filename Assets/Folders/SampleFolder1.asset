@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   title: Folder1
   contentWithin:
+  - {fileID: 11400000, guid: 4dfaa4d0f7183064d89219761acfd6bf, type: 2}
   - {fileID: 11400000, guid: a24014eab413fdd4c80269b3c659a604, type: 2}
   - {fileID: 11400000, guid: 9c0af4c22a6f65f4f83616ef3ee47de6, type: 2}
-  - {fileID: 11400000, guid: 4dfaa4d0f7183064d89219761acfd6bf, type: 2}
+  parent: {fileID: 11400000, guid: d4bef97bfca8867488e4473a431609c3, type: 2}
