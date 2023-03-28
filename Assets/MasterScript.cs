@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 public class MasterScript : MonoBehaviour
 {
+    public _Folder[] startFolder;
     public _Folder current_dir;
     public GameObject filePrefab;
     public GameObject folderPrefab;
@@ -12,7 +14,25 @@ public class MasterScript : MonoBehaviour
     static List<GameObject> displayedIcons;
     void Start()
     {
+        //SceneManager.LoadScene("DirectoryView");
         displayedIcons = new List<GameObject>();
+        if(SaveLoad.LoadData().resetPGF == true)
+        {
+            PlayerPrefs.DeleteAll();
+            PlayerData tmp = SaveLoad.LoadData();
+            tmp.resetPGF=true;
+            SaveLoad.SaveData(tmp);
+
+        }
+        string temp = SaveLoad.LoadData().load_room;
+        if(temp=="Room3")
+        current_dir = startFolder[0];
+        else if(temp=="Room8")
+        current_dir = startFolder[1];
+        else if(temp=="Room10")
+        current_dir = startFolder[2];
+        else
+        Application.Quit();
         displayCurrentDirectory();
     }
     void displayCurrentDirectory()
@@ -67,5 +87,9 @@ public class MasterScript : MonoBehaviour
         }
         current_dir=f;
         displayCurrentDirectory();
+    }
+    public void fileClicked(_File f)
+    {
+        SceneManager.LoadScene(f.SceneToSwitchTo);
     }
 }

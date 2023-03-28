@@ -6,6 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/DirectoryView.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/FileScene.unity
+    guid: 3ed2f53877af1fb4d8a96c44d82bd66f
+  - enabled: 1
+    path: Assets/Scenes/Room3/Room3F1.unity
+    guid: e721ebe9652b064428992c9ecb2abe2d
+  - enabled: 1
+    path: Assets/Scenes/Room8/Room8F1.unity
+    guid: 2b18d4ab70a01ea41a56717d9901d867
+  - enabled: 1
+    path: Assets/Scenes/Room8/Room8F2.unity
+    guid: 8c4a8da58fbec664c950332dce462e02
+  - enabled: 1
+    path: Assets/Scenes/Room8/Room8F3.unity
+    guid: b38d86508b879e740b184bf03008e74e
+  - enabled: 1
+    path: Assets/Scenes/Room10/BossScript.unity
+    guid: 95a327fc0b51bd242af52eebbb782f02
+  - enabled: 1
+    path: Assets/Scenes/Room10/Room38.unity
+    guid: 6c6c26e402529024ca4a69bd3876b2df
+  - enabled: 1
+    path: Assets/Scenes/Room10/Room50.unity
+    guid: 503cb8919e5d2ac4998f04e733ef4719
+  - enabled: 1
+    path: Assets/Scenes/Room10/Room66.unity
+    guid: c559f44c45491594bb9db3d22bd3dad7
   m_configObjects: {}

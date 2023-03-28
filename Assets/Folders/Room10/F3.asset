@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40b83661699f9ab46b2066b7c779d982, type: 3}
+  m_Name: F3
+  m_EditorClassIdentifier: 
+  title: Room50
+  contentWithin:
+  - {fileID: 11400000, guid: 21fc3eef66a0bd54fb1595c8cf5ddde9, type: 2}
+  - {fileID: 11400000, guid: 3e634392e1e5057409057fa9a62dccd9, type: 2}
+  parent: {fileID: 11400000, guid: 3f01f9f14509c8641b1a49e7eca228b7, type: 2}

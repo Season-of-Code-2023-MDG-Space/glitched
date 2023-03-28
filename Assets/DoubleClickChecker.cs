@@ -53,6 +53,10 @@ public class DoubleClickChecker : MonoBehaviour
                 {
                     g.SendMessage("folderClicked", (_Folder)(gameObject.GetComponent<_PrefabData>().iconToRepresent));
                 }
+                else
+                {
+                    g.SendMessage("fileClicked", (_File)(gameObject.GetComponent<_PrefabData>().iconToRepresent));
+                }
                 break;
             }
             yield return new WaitForEndOfFrame();
