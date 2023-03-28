@@ -19,6 +19,8 @@ public class Room : MonoBehaviour
     protected string Room3 = "Room3";
     protected string Room4 = "Room4";
     protected string RickRoll = "RickRoll";
+    protected string EndingMusic = "EndingMusic";
+    protected string BossMusic = "BossMusic";
     void Start()
     {
         GameObject g = GameObject.Find("GameController");
@@ -52,6 +54,12 @@ public class Room : MonoBehaviour
         }
         finally{}
         return c;
+    }
+    public void display(float t, params string[] words)
+    {
+        string x= uim.txt.text + addText(words);
+        current_cr = StartCoroutine(uim.textEffect(words));
+        uim.txt.text = x;  
     }
     public void cs() //clear screen (clears input too)
     {

@@ -6,4 +6,8 @@ using UnityEngine;
 public class PlayerData
 {
     public string load_room;
+    public bool allowRoom3 = false;
+    public bool allowRoom10 = false;
+    public bool resetPGF = true;
+    public int BossFightHealth = 100;
 }
